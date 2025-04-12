@@ -1274,7 +1274,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Project hover effects
+  // Add animation to project cards
   const projectCards = document.querySelectorAll('.project-card');
   projectCards.forEach(card => {
     card.addEventListener('mouseenter', function() {
@@ -1285,22 +1285,6 @@ document.addEventListener('DOMContentLoaded', function() {
     card.addEventListener('mouseleave', function() {
       this.style.transform = 'translateY(0)';
       this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
-    });
-  });
-  
-  // Add micro-interaction to buttons
-  const buttons = document.querySelectorAll('.btn');
-  buttons.forEach(button => {
-    button.addEventListener('mousedown', function() {
-      this.style.transform = 'scale(0.95)';
-    });
-    
-    button.addEventListener('mouseup', function() {
-      this.style.transform = 'scale(1)';
-    });
-    
-    button.addEventListener('mouseleave', function() {
-      this.style.transform = 'scale(1)';
     });
   });
   

@@ -19,6 +19,8 @@ const TabButton = ({ active, onClick, children }: TabButtonProps) => {
           "text-slate-400 hover:text-slate-200"
       )}
       onClick={onClick}
+      role="tab"
+      aria-selected={active}
     >
       {children}
       {active && (
