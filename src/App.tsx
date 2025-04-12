@@ -14,7 +14,10 @@ interface Message {
   content: string;
 }
 
-const initialFiles = {
+// Define the type for our files object
+type FileSystem = Record<string, string>;
+
+const initialFiles: FileSystem = {
   'index.html': `<!DOCTYPE html>
 <html>
 <head>
@@ -33,7 +36,7 @@ const initialFiles = {
 
 const App = () => {
   const [activeTab, setActiveTab] = useState("chat");
-  const [files, setFiles] = useState(initialFiles);
+  const [files, setFiles] = useState<FileSystem>(initialFiles);
   const [currentFile, setCurrentFile] = useState('index.html');
   const [messages, setMessages] = useState<Message[]>([
     { isUser: false, content: "Hi there! I'm your AI coding assistant. What would you like me to build for you today?" }
@@ -123,7 +126,7 @@ const App = () => {
   };
 
   // Simulate AI code changes based on user message
-  const processAIResponse = (message: string, currentFiles: Record<string, string>) => {
+  const processAIResponse = (message: string, currentFiles: FileSystem): FileSystem => {
     const lowerMessage = message.toLowerCase();
     const newFiles = { ...currentFiles };
     
