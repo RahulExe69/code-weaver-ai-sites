@@ -13,9 +13,10 @@ const Panel = ({ active, id, children }: PanelProps) => {
     <div 
       id={`${id}-panel`}
       className={cn(
-        "h-[calc(100vh-48px)] w-full",
-        active ? "flex" : "hidden"
+        "h-[calc(100vh-48px)] w-full transition-opacity duration-150",
+        active ? "flex opacity-100" : "hidden opacity-0"
       )}
+      aria-hidden={!active}
     >
       {children}
     </div>
